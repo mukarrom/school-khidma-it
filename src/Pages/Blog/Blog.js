@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 
-const Blog = () => {
+const Blog = ({ item }) => {
+  const { title, imgURL, blog, _id } = item;
   return (
     <article className="md:w-10/12 lg:w-2/3 mx-auto">
       <section className="text-gray-600 body-font">
@@ -9,7 +11,7 @@ const Blog = () => {
               <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                 <img
                   className="w-full object-cover object-center"
-                  src="https://dummyimage.com/720x400"
+                  src={imgURL}
                   alt="blog"
                 />
                 <div className="p-6">
@@ -17,19 +19,11 @@ const Blog = () => {
                     CATEGORY
                   </h2>
                   <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-                    Best Treehouse Plans
+                    {title}
                   </h1>
-                  <p className="leading-relaxed mb-3">
-                    Integer rhoncus hendrerit sem egestas porttitor. Integer et
-                    mi sed dolor eleifend pretium quis ut velit. Nam sit amet
-                    arcu feugiat, consequat orci at, ultrices magna. Aliquam
-                    vestibulum, eros vel venenatis vulputate, erat augue
-                    suscipit mi, nec rhoncus velit ipsum sed lorem. Nulla
-                    commodo leo eget justo blandit, non sagittis lectus
-                    dignissim.
-                  </p>
+                  <p className="leading-relaxed mb-3">{blog}</p>
                   <div className="flex items-center flex-wrap ">
-                    <a
+                    <Link to={`/blog/${_id}`}
                       href="#1"
                       className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0 uppercase"
                     >
@@ -46,7 +40,7 @@ const Blog = () => {
                         <path d="M5 12h14"></path>
                         <path d="M12 5l7 7-7 7"></path>
                       </svg>
-                    </a>
+                    </Link>
                     <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                       <svg
                         className="w-4 h-4 mr-1"
@@ -80,7 +74,6 @@ const Blog = () => {
                 </div>
               </div>
             </div>
-            
           </div>
         </div>
       </section>

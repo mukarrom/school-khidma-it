@@ -5,7 +5,7 @@ const HeroBenner = () => {
     <div>
       <div
         class="hero min-h-screen"
-        style={{backgroundImage: "url(https://placeimg.com/1000/800/arch)"}}
+        style={{backgroundImage: "url(https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1186&q=80)"}}
       >
         <div class="hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-center text-neutral-content">
